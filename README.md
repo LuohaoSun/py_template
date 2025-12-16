@@ -1,6 +1,6 @@
-# ML Project Template
+# My Awesome Project
 
-A template for ML projects.
+My awesome project description.
 
 ## Features
 
