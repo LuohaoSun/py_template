@@ -31,7 +31,12 @@ endif
 
 .PHONY: init
 init:
-	@# 1. Rename Project (if arguments provided and different)
+	@# 1. Initialize Git (if not a git repo)
+	@if [ ! -d ".git" ]; then \
+		echo "🚀 Initializing Git repository..."; \
+		git init; \
+	fi
+	@# 2. Rename Project (if arguments provided and different)
 	@if [ "$(NAME)" != "$(PROJECT_NAME)" ] || [ "$(PKG)" != "$(OLD_PKG_NAME)" ]; then \
 		echo "🚀 Renaming project to $(NAME) / $(PKG)..."; \
 		if [ -d "$(SRC_DIR)/$(OLD_PKG_NAME)" ]; then \
@@ -42,10 +47,10 @@ init:
 	else \
 		echo "ℹ️  No name change detected (use NAME=... PKG=... to rename). Proceeding with setup..."; \
 	fi
-	@# 2. Install Dependencies
+	@# 3. Install Dependencies
 	@echo "📦 Installing dependencies with uv..."
 	@uv sync --all-extras
-	@# 3. Install Pre-commit
+	@# 4. Install Pre-commit
 	@echo "⚓️ Installing pre-commit hooks..."
 	@uv run pre-commit install
 	@echo "✅ Initialization complete!"
