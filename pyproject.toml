@@ -17,6 +17,7 @@ dev = [
   "matplotlib",
   "seaborn",
   "pre-commit",
+  "ruff",
   "pyright",
 ]
 
