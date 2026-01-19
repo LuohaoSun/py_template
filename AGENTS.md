@@ -1,6 +1,6 @@
 # Project Instructions
 
-The agent should update this file to reflect the project status.
+The agent should update this file to reflect the project status(e.g. when project structure is changed, etc.).
 
 ## Project Structure
 
