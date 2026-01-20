@@ -28,6 +28,9 @@ features = ["dev"]
 [tool.hatch.version]
 source = "vcs"
 
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/my_lib"]
 
