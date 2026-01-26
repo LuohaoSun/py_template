@@ -19,6 +19,7 @@ dev = [
   "pre-commit",
   "ruff",
   "basedpyright",
+  "pandas-stubs",
 ]
 
 [tool.hatch.envs.default]
