@@ -18,7 +18,7 @@ dev = [
   "seaborn",
   "pre-commit",
   "ruff",
-  "pyright",
+  "basedpyright",
 ]
 
 [tool.hatch.envs.default]
@@ -37,8 +37,8 @@ packages = ["src/my_lib"]
 [tool.uv]
 index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 
-[tool.pyright]
-typeCheckingMode = "basic"
+[tool.basedpyright]
+typeCheckingMode = "standard"
 
 [tool.ruff]
 target-version = "py310"
