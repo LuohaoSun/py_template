@@ -11,20 +11,20 @@ requires-python = ">=3.10"
 
 dependencies = ["numpy", "scipy", "pandas", "scikit_learn"]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-  "ipykernel",
-  "matplotlib",
-  "seaborn",
-  "pre-commit",
+  # "dvc",
   "ruff",
+  "pytest",
+  "prettier",
+  "ipykernel",
   "basedpyright",
   "pandas-stubs",
 ]
 
-[tool.hatch.envs.default]
-installer = "uv"
-features = ["dev"]
+[tool.uv]
+index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default-groups = ["dev"]
 
 [tool.hatch.version]
 source = "vcs"
@@ -34,9 +34,6 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/my_lib"]
-
-[tool.uv]
-index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 
 [tool.basedpyright]
 typeCheckingMode = "standard"
