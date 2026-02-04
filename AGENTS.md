@@ -12,7 +12,6 @@
 - Use `uv` for dependency management.
 - Use `uv run ...` instead of `python ...` to run scripts.
 - Use `uv sync --all-extras` to install dependencies.
-- Pre-commit hooks are configured (`.pre-commit-config.yaml`).
 
 ### Coding Instructions
 
