@@ -27,9 +27,9 @@ repos:
         types: [python]
         require_serial: true
 
-      - id: basedpyright
-        name: basedpyright
-        entry: uv run basedpyright
+      - id: pyright
+        name: pyright
+        entry: uv run pyright
         language: system
         types: [python]
         pass_filenames: false

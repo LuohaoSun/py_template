@@ -13,12 +13,11 @@ dependencies = ["numpy", "scipy", "pandas", "scikit_learn"]
 
 [dependency-groups]
 dev = [
-  # "dvc",
   "ruff",
   "pytest",
+  "pyright",
   "prettier",
   "ipykernel",
-  "basedpyright",
   "pandas-stubs",
 ]
 
@@ -35,8 +34,9 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/my_lib"]
 
-[tool.basedpyright]
+[tool.pyright]
 typeCheckingMode = "standard"
+include = ["src"]
 
 [tool.ruff]
 target-version = "py310"

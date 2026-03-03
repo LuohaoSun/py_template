@@ -1,0 +1,44 @@
+version: '1.0'
+name: code-quality-check
+displayName: 代码质量检查
+triggers:
+  trigger: auto
+  pr:
+    branches:
+      precise:
+        - master
+        - dev
+stages:
+  - name: lint-and-typecheck
+    displayName: 代码质量检查
+    strategy: naturally
+    trigger: auto
+    executor: []
+    steps:
+      - step: build@python
+        name: ruff_check
+        displayName: Ruff 代码检查
+        pythonVersion: '3.10'
+        commands:
+          - pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+          - pip install ruff
+          - export PATH="/root/.local/bin:$PATH"
+          - ruff check src/ --no-fix
+          - ruff format src/ --check
+        caches: []
+        notify: []
+        strategy:
+          retry: '0'
+      # - step: build@python
+      #   name: pyright_check
+      #   displayName: Pyright 类型检查
+      #   pythonVersion: '3.10'
+      #   commands:
+      #     - pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+      #     - pip install pyright
+      #     - export PATH="/root/.local/bin:$PATH"
+      #     - pyright src/
+      #   caches: []
+      #   notify: []
+      #   strategy:
+      #     retry: '0'
