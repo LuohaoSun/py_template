@@ -24,7 +24,6 @@ dev = [
 
 [tool.uv]
 index-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
-default-groups = ["dev"]
 
 [tool.hatch.version]
 source = "vcs"
