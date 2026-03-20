@@ -16,6 +16,7 @@
 ### Coding Instructions
 
 - Use modern Python practices (Type hints, etc.).
+- Use Google style docstrings.
 - Format and lint the code using Ruff: `uv run ruff check . --fix` and `uv run ruff format .`.
 - Flat is better than nested. 严禁多层嵌套.
 - Errors should never pass silently. 除非用户指定,任何防御性代码都不得自动回退, 必须显示抛出错误.
