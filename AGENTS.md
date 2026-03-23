@@ -21,4 +21,4 @@
 - Flat is better than nested. 严禁多层嵌套.
 - Errors should never pass silently. 除非用户指定,任何防御性代码都不得自动回退, 必须显示抛出错误.
 - In the face of ambiguity, refuse the temptation to guess. 如果用户需求不明确, 询问用户直到需求明确为止.
-- Use proper message prefix when committing, e.g. `feat:`, `fix:`, `refactor:`, etc.
+- Use Conventional Commits for commit messages.
