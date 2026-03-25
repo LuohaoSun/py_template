@@ -43,10 +43,7 @@ target-version = "py310"
 line-length = 120
 indent-width = 4
 src = ["src"]
-include = [
-  "src/**/*.py",
-  "src/**/*.pyi",
-]
+include = ["src/**/*.py", "src/**/*.pyi"]
 
 [tool.ruff.lint]
 select = [
